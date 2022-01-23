@@ -61,11 +61,9 @@ class ImageTable extends React.Component<typeImageTableProps, typeImageTableStat
 export default ImageTable;
 
 function createRaneItems(rane_num: number, items: typeItems): typeRaneItems[][] {
-  console.log(items);
-
   const RaneItems: typeRaneItems[][] = Array(rane_num).fill([]).map(_i=>([]))
   const RaneHeights: number[] = Array(rane_num).fill(0);
-  items.url.forEach((item: string, index: number) => {
+  items?.url.forEach((item: string, index: number) => {
     const minHeightIndex = searchMinHeightIndex(RaneHeights);
     RaneHeights[minHeightIndex] += items.height[index];
     RaneItems[minHeightIndex].push({ url: item, source: items.source[index] });

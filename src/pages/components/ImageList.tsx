@@ -12,7 +12,7 @@ class ImageList extends React.Component<typeImageListProps> {
   listItems = (items: typeRaneItems[]) => {
     return (
       <div className="flex flex-col">
-        {items.map((item: typeRaneItems, index: number) => {
+        {items?.map((item: typeRaneItems, index: number) => {
           return (
             <div key={index}>
               <div className="m-1 max-w-xs">
